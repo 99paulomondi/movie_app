@@ -1,0 +1,17 @@
+.App{
+    background-color: #1A202C;
+    width: 100%;
+    min-height: 100vh;
+}
+.banner{
+    background: linear-gradient( rgba(0,0,0,0.3), rgba(26, 32, 44, 1)), url("./assets/wallpaper2.jpeg");
+    min-height: 80vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#poster{
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}

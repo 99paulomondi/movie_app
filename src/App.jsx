@@ -1,8 +1,12 @@
+import { Movie } from "./components/Movie"
+
 function App() {
 
   return (
     <>
-      <h1>Kenya</h1>
+      <div className="App">
+        <Movie/>
+      </div>
     </>
   )
 }
