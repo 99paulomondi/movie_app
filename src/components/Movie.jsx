@@ -2,6 +2,7 @@ import { Box, Button, Container, Grid, GridItem, HStack, Input, InputGroup, Tag,
 import { useEffect, useState } from "react";
 import { StarIcon } from "@chakra-ui/icons"
 import axios from "axios";
+import { DetailsModal } from "./DetailsModal";
 
 export const Movie = () => {
     const [movies, setMovie] = useState([]);
@@ -62,16 +63,16 @@ export const Movie = () => {
                         movies.length > 0 ? (
                             movies.map((movie)=>(
                                 <>
-                                    <GridItem>
+                                    <GridItem key={movie.id}>
                                         <Box>
                                             <Box>
                                                 <img src={img_url+movie.poster_path} width={"100%"} id="poster" alt={movie.title} />
                                                 <Box py={2}>
                                                     <Box width={"100%"} display={"flex"} justifyContent={"space-between"}>
-                                                        <Text key={movie.id}  color={"white"} fontSize={"lg"} noOfLines={1}>{movie.title}</Text>
+                                                        <Text   color={"white"} fontSize={"lg"} noOfLines={1}>{movie.title}</Text>
                                                         <HStack>
                                                             <StarIcon boxSize={4} color={"yellow"}/>
-                                                        <Text color={"white"}>{movie.vote_average}</Text>
+                                                            <Text color={"white"}>{movie.vote_average}</Text>
                                                         </HStack>
                                                     </Box>
                                                     
@@ -81,7 +82,9 @@ export const Movie = () => {
                                                     <Tag variant={"solid"} colorScheme="green">Movie</Tag>
                                                     <Text color={"white"}>{movie.release_date}</Text>
                                                 </Box>
-                                                
+                                                <Box>
+                                                    <DetailsModal title={movie.title} src={img_url+movie.poster_path} description={movie.overview}/>
+                                                </Box>
                                             </Box>
                                         </Box>
                                         
