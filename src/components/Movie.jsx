@@ -46,6 +46,7 @@ export const Movie = () => {
                 <Box display={"flex"} justifyContent={"center"} alignItems={"center"} minH={"80vh"}>
                     <Box w={{base: "100%", md: "60%"}}>
                         <form onSubmit={searchMovie}>
+                            <Text fontSize={"4xl"} color={"white"} textAlign={"center"} pb={3}>MovieWorld</Text>
                             <InputGroup gap={3}>
                                 <Input name="query" value={query} onChange={changeHandler} aria-label="search" placeholder="Enter Movie Title ..." size={"lg"} bg={"white"}/>
                                 <Button size={"lg"} type="submit" bg={"yellow.400"} color={"white"} _hover={{bg: "yellow.300"}}>Search</Button>
@@ -99,6 +100,12 @@ export const Movie = () => {
                     }
                 </Grid>
             </Container>
+        </Box>
+
+        <Box id="footer">
+            <Box display={"Flex"} minHeight={"50vh"} alignItems={"center"} justifyContent={"center"}>
+                <Text color={"red.100"}>Website Designed by Paul Oduor Omondi</Text>
+            </Box>
         </Box>
     </>
   )

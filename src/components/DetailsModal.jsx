@@ -6,7 +6,7 @@ export const DetailsModal = ({title, src, description}) => {
     const btnRef = React.useRef()
   return (
     <>
-        <Button ref={btnRef} colorScheme='teal' onClick={onOpen} w={"100%"} my={3}>Details</Button>
+        <Button ref={btnRef} bg={"gray.700"} _hover={{bg: "gray.600"}} color={"white"} onClick={onOpen} w={"100%"} my={3}>Details</Button>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>
             <DrawerOverlay/>
             <DrawerContent>
