@@ -1,6 +1,6 @@
 import { Box, Button, Container, Grid, GridItem, HStack, Input, InputGroup, Tag, Text} from "@chakra-ui/react"
 import { useEffect, useState } from "react";
-import { StarIcon } from "@chakra-ui/icons"
+import { StarIcon } from "@chakra-ui/icons";
 import axios from "axios";
 import { DetailsModal } from "./DetailsModal";
 
@@ -84,7 +84,7 @@ export const Movie = () => {
                                                     <Text color={"white"}>{movie.release_date}</Text>
                                                 </Box>
                                                 <Box>
-                                                    <DetailsModal title={movie.title} src={img_url+movie.poster_path} description={movie.overview}/>
+                                                    <DetailsModal title={movie.title} src={img_url+movie.poster_path} description={movie.overview} vote={movie.vote_average}/>
                                                 </Box>
                                             </Box>
                                         </Box>
@@ -103,7 +103,7 @@ export const Movie = () => {
         </Box>
 
         <Box id="footer">
-            <Box display={"Flex"} minHeight={"50vh"} alignItems={"center"} justifyContent={"center"}>
+            <Box display={"Flex"} minHeight={"30vh"} alignItems={"center"} justifyContent={"center"}>
                 <Text color={"red.100"}>Website Designed by Paul Oduor Omondi</Text>
             </Box>
         </Box>

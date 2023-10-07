@@ -17,7 +17,7 @@
 }
 #footer{
     background: linear-gradient(rgba(26, 32, 44, 1), rgba(0,0,0,0.5)), url("./assets/footer.jpg");
-    min-height: 50vh;
+    min-height: 40vh;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

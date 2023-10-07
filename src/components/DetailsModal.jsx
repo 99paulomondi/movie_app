@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from "react"
-import {Button, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, Text} from "@chakra-ui/react"
-export const DetailsModal = ({title, src, description}) => {
+import {Button, HStack, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, Text} from "@chakra-ui/react";
+import { StarIcon } from "@chakra-ui/icons";
+
+
+export const DetailsModal = ({title, src, description, vote}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
   return (
@@ -14,6 +17,10 @@ export const DetailsModal = ({title, src, description}) => {
                 <DrawerHeader>{title}</DrawerHeader>
                 <DrawerBody>
                     <img src={src} width={"100%"} id="poster" alt={title} />
+                    <HStack py={3}>
+                        <StarIcon boxSize={4} color={"yellow"}/>
+                        <Text as={"b"}>{vote}</Text>
+                    </HStack>
                     <Text py={2}>{description}</Text>
                 </DrawerBody>
                 <DrawerFooter>
